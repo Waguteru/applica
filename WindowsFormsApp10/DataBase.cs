@@ -9,27 +9,27 @@ namespace WindowsFormsApp10
 {
     public class DataBase
     {
-        NpgsqlConnection connection = new NpgsqlConnection("Server = localhost; port = 5432; DataBase = application_test; User Id = postgres; Password = 123");
+        NpgsqlConnection connection1 = new NpgsqlConnection("Server = localhost; port = 5432; DataBase = application_test; User Id = postgres; Password = 123");
 
         public void ConnectionOpen()
         {
-            if(connection.State == System.Data.ConnectionState.Closed)
+            if(connection1.State == System.Data.ConnectionState.Closed)
             {
-                connection.Open();
+                connection1.Open();
             }
         }
 
         public void ConnectionClose()
         {
-            if(connection.State == System.Data.ConnectionState.Open)
+            if(connection1.State == System.Data.ConnectionState.Open)
             {
-                connection.Close();
+                connection1.Close();
             }
         }
 
         public NpgsqlConnection GetConnection()
         {
-            return connection;
+            return connection1;
         }
     }
 }
